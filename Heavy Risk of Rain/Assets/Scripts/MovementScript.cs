@@ -18,7 +18,7 @@ public class MovementScript : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        float speed = 5f;
+        float speed = 2000f;
         bool IsJumping;
         int amount;
 
