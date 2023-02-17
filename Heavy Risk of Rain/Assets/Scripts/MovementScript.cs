@@ -5,6 +5,11 @@ using UnityEngine;
 public class MovementScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    public float jumpForce;
+    public float gravity;
+    public Transform GroundCheck;
+    public LayerMask layerMask;
+    public bool isGrounded;
     Rigidbody rb;
 
     void Start()
@@ -19,8 +24,7 @@ public class MovementScript : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
 
         float speed = 2000f;
-        bool IsJumping;
-        int amount;
+        
 
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
 
@@ -28,5 +32,14 @@ public class MovementScript : MonoBehaviour
         {
             rb.AddForce(direction * speed * Time.deltaTime);
         }
+
+        isGrounded = Physics.CheckSphere(GroundCheck.position, 0.2f, layerMask);
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            rb.AddForce(Vector3.up * jumpForce);
+        }
+
+        rb.AddForce(Vector3.down * gravity * Time.deltaTime);
     }
 }
