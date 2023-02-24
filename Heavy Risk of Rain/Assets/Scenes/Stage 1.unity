@@ -345,7 +345,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436016191}
-  m_LocalRotation: {x: 0.09897817, y: -0.000000008560947, z: 8.5152807e-10, w: 0.99508965}
+  m_LocalRotation: {x: 0.09897817, y: 0.000000008560945, z: -8.515279e-10, w: 0.99508965}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -493,12 +493,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e0cf676926c9b498f609ea18142263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackedObject: {fileID: 0}
-  maxDistance: 10
-  moveSpeed: 20
-  updateSpeed: 10
-  currentDistance: 5
-  hideDistance: 1.5
 --- !u!81 &996087799
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1248,8 +1242,8 @@ MonoBehaviour:
   GroundCheck: {fileID: 404196640}
   layerMask:
     serializedVersion: 2
-    m_Bits: 55
-  isGrounded: 0
+    m_Bits: 63
+  isGrounded: 1
 --- !u!136 &1999259668
 CapsuleCollider:
   m_ObjectHideFlags: 0
