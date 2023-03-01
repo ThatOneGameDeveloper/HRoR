@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementScript : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public float jumpForce;
@@ -24,7 +24,7 @@ public class MovementScript : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
 
         float speed = 2000f;
-        
+
 
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
 
