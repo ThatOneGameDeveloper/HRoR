@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform GroundCheck;
     public LayerMask layerMask;
     public bool isGrounded;
+    public bool forceGround;
     Rigidbody rb;
 
     void Start()
@@ -35,9 +36,14 @@ public class PlayerMovement : MonoBehaviour
 
         isGrounded = Physics.CheckSphere(GroundCheck.position, 0.1f, layerMask);
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && forceGround)
         {
             rb.AddForce(Vector3.up * jumpForce);
+            forceGround = false;
+        }
+        else
+        {
+            forceGround = true;
         }
 
         rb.AddForce(Vector3.down * gravity * Time.deltaTime);
